@@ -33,7 +33,7 @@ article {
 }
 
 nav {
-  background-color: #0066cc;
+  background-color: #da007f;
   padding: 0.5rem 1rem;
   margin-bottom: 2rem;
 }
@@ -54,4 +54,16 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+}
+
+textarea, input { 
+  width: 100%; margin-top: 1rem; 
+}
+
+button { 
+  margin-top: 1rem; 
+}
+    
+pre { 
+  background: #f3f3f3; padding: 1rem; white-space: pre-wrap; 
 }

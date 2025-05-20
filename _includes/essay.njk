@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>{{ title }}</title>
-  <style>
-    body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2rem; }
-    textarea, input { width: 100%; margin-top: 1rem; }
-    button { margin-top: 1rem; }
-    pre { background: #f3f3f3; padding: 1rem; white-space: pre-wrap; }
-  </style>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/breaths/">Breaths</a></li>
+    </ul>
+  </nav>
+
   <article>
     <h1>{{ title }}</h1>
     {{ content | safe }}

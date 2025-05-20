@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2rem; }
+    textarea, input { width: 100%; margin-top: 1rem; }
+    button { margin-top: 1rem; }
+    pre { background: #f3f3f3; padding: 1rem; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <article>
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </article>
+
+  <hr>
+
+  <section id="ask">
+    <h2>Ask a question about this essay</h2>
+    <form id="qa-form">
+      <label for="question">Your question:</label>
+      <textarea id="question" rows="4" placeholder="Ask anything..."></textarea>
+      <button type="submit">Ask</button>
+    </form>
+    <h3>Answer:</h3>
+    <pre id="response"></pre>
+  </section>
+
+  <script>
+    const essay = `{{ content | striptags | replace('\n', ' ') | trim | escape | safe }}`;
+
+    document.getElementById("qa-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const question = document.getElementById("question").value;
+      const responseEl = document.getElementById("response");
+      responseEl.textContent = "Thinking...";
+
+      const res = await fetch("/.netlify/functions/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ essay, question })
+      });
+
+      const data = await res.json();
+      responseEl.textContent = data.answer || data.error || "No response.";
+    });
+  </script>
+</body>
+</html>

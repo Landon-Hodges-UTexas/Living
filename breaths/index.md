@@ -3,8 +3,6 @@ layout: layout.njk
 title: Breaths
 ---
 
-# Breaths
-
 <ul>
 {% for breath in collections.blog %}
   <li>

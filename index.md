@@ -1,9 +1,9 @@
 ---
 layout: layout.njk
-title: Home
+title: oh god landon made a website
 ---
 
-# Welcome to My Blog
+# here are the things he talked about:
 
 <ul>
 {% for post in collections.all %}

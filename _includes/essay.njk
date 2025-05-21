@@ -35,7 +35,7 @@
   </div>
 
 <script>
-  {% if supplementFile %}
+  {% if supplementFile % | striptags | replace('\n', ' ') | trim | escape | safe }
     const supplement = `{% include supplementFile %}`;
   {% else %}
     // Default empty supplement if none provided

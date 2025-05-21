@@ -88,8 +88,8 @@ nav a:hover {
   background: #f5f5f5;
   outline: none;
   line-height: 1.6;
-  min-height: 40px;
-  max-height: 150px;
+  min-height: 3rem;
+  max-height: 8rem;
   overflow-y: auto;
 }
 

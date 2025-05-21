@@ -33,8 +33,20 @@
 
 <pre id="response" class="qa-response"></pre>
 
-{% set supplementEntry = collections.supplements | find(item => item.data.slug == supplementSlug) %}
-{% set supplementMarkdown = supplementEntry.templateContent | striptags | replace('\n', ' ') | trim %}
+{% set supplementEntry = false %}
+{% for item in collections.supplements %}
+  {% if item.data.slug == supplementSlug %}
+    {% set supplementEntry = item %}
+  {% endif %}
+{% endfor %}
+
+{% if supplementEntry %}
+  {% set supplementMarkdown = supplementEntry.templateContent | striptags | replace('\n', ' ') | trim %}
+{% else %}
+  {% set supplementMarkdown = '' %}
+{% endif %}
+
+<pre>{{ collections.supplements | dump }}</pre>
 
 <script>
   const essay = `{{ content | striptags | replace('\n', ' ') | trim | escape | safe }}`;

@@ -1,8 +1,7 @@
 ---
 title: "Language Food"
 permalink: false
-tags: 
-  - 'supplements'
+tags: ['supplements']
 slug: language-food-supplement
 ---
 This essay was written to inspire readers to formalize their expertise. I would love to walk a reader throught the process of doing so. These are some books I'd recommend for further reading: 

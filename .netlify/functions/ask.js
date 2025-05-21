@@ -8,16 +8,17 @@ exports.handler = async function(event, context) {
     };
   }
 
-  const { essay, question } = JSON.parse(event.body);
+  const { essay, question, supplement } = JSON.parse(event.body);
 
-  if (!essay || !question) {
+  if (!essay || !question || !supplement) {
     return {
       statusCode: 400,
-      body: JSON.stringify({ error: "Both 'essay' and 'question' are required." })
+      body: JSON.stringify({ error: "'essay', 'question', and 'supplement' are required." })
     };
   }
 
-  const prompt = `Here is your essay:\n\n${essay}\n\nAnswer this question about it:\n\n${question}`;
+  const systemPrompt = `You are the author of this essay. Answer questions about it from the author's perspective, using the supplemental information about you and the writing experience.\n\n${essay}\n\nHere is the supplement:\n\n${supplement}`;
+  const prompt = `Answer this question about your essay in a manner consistent with your supplemental info:\n\n${question}`;
 
   try {
     // Dynamically import node-fetch
@@ -34,7 +35,7 @@ exports.handler = async function(event, context) {
       body: JSON.stringify({
         model: "meta-llama/llama-3.3-8b-instruct:free", // swap models here as needed
         messages: [
-          { role: "system", content: "You are the author of this essay. Answer questions about it from the author's perspective." },
+          { role: "system", content: systemPrompt },
           { role: "user", content: prompt }
         ]
       })

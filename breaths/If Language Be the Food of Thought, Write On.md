@@ -5,6 +5,7 @@ tags:
 title: If Language Be the Food of Thought, Write On
 layout: essay.njk
 date: 2025-05-20
+supplementSlug: language-food-supplement
 ---
 Generative AI is not intelligent in the human sense. It doesn't think: it manipulates. It finds, distills, and reassembles patterns in the languages it has been trained on: English, Python, math, formal logic. Humans developed languages to express internal thought, but shaped them so robustly that they can approximate thought in many domains. AI doesn't experience the thoughts behind these languages: it replicates their cognitive patterns, efficiently, iteratively, and without fatigue.
 

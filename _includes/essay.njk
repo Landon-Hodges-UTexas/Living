@@ -20,35 +20,46 @@
 
   <hr>
 
-  <section id="ask">
-    <h2>Ask a question about this essay</h2>
-    <form id="qa-form">
-      <label for="question">Your question:</label>
-      <textarea id="question" rows="4" placeholder="Ask anything..."></textarea>
-      <button type="submit">Ask</button>
-    </form>
-    <h3>Answer:</h3>
-    <pre id="response"></pre>
-  </section>
+<div id="chat-toggle">💬</div>
 
-  <script>
-    const essay = `{{ content | striptags | replace('\n', ' ') | trim | escape | safe }}`;
+<div id="chat-box">
+  <div id="chat-header">
+    <strong>Ask about this essay</strong>
+    <span id="chat-close">&times;</span>
+  </div>
+  <form id="qa-form">
+    <textarea id="question" rows="3" placeholder="Ask a question..."></textarea>
+    <button type="submit">Ask</button>
+  </form>
+  <pre id="response"></pre>
+</div>
 
-    document.getElementById("qa-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const question = document.getElementById("question").value;
-      const responseEl = document.getElementById("response");
-      responseEl.textContent = "Thinking...";
+<script>
+  const essay = `{{ content | striptags | replace('\n', ' ') | trim | escape | safe }}`;
 
-      const res = await fetch("/.netlify/functions/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ essay, question })
-      });
+  const chatBox = document.getElementById("chat-box");
+  const chatToggle = document.getElementById("chat-toggle");
+  const chatClose = document.getElementById("chat-close");
 
-      const data = await res.json();
-      responseEl.textContent = data.answer || data.error || "No response.";
+  chatToggle.onclick = () => chatBox.style.display = "block";
+  chatClose.onclick = () => chatBox.style.display = "none";
+
+  document.getElementById("qa-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = document.getElementById("question").value;
+    const responseEl = document.getElementById("response");
+    responseEl.textContent = "Thinking...";
+
+    const res = await fetch("/.netlify/functions/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ essay, question })
     });
-  </script>
+
+    const data = await res.json();
+    responseEl.textContent = data.answer || data.error || "No response.";
+  });
+</script>
+
 </body>
 </html>

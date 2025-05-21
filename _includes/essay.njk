@@ -33,9 +33,17 @@
 
 <pre id="response" class="qa-response"></pre>
 
+{{ supplementFile | striptags | replace('\n', ' ') | trim | escape | safe }}
+
 <script>
+  {% if supplementFile %}
+    const supplement = `{% include supplementFile %}`;
+  {% else %}
+    // Default empty supplement if none provided
+    const supplement = "";
+  {% endif %}
+
   const essay = `{{ content | striptags | replace('\n', ' ') | trim | escape | safe }}`;
-  const supplement = `{{ supplementFile | striptags | replace('\n', ' ') | trim | escape | safe }}`;
 
   const form = document.getElementById("qa-form");
   const questionInput = document.getElementById("question");

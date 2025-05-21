@@ -20,35 +20,44 @@
 
   <hr>
 
-  <section id="ask">
-    <h2>Ask a question about this essay</h2>
+  <div id="prompt-box">
     <form id="qa-form">
-      <label for="question">Your question:</label>
-      <textarea id="question" rows="4" placeholder="Ask anything..."></textarea>
-      <button type="submit">Ask</button>
+      <textarea
+        id="question"
+        rows="1"
+        placeholder="Ask a question about this essay..."
+      ></textarea>
+      <button type="submit">Send</button>
     </form>
-    <h3>Answer:</h3>
-    <pre id="response"></pre>
-  </section>
+  </div>
 
-  <script>
-    const essay = `{{ content | striptags | replace('\n', ' ') | trim | escape | safe }}`;
+<pre id="response" class="qa-response"></pre>
 
-    document.getElementById("qa-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const question = document.getElementById("question").value;
-      const responseEl = document.getElementById("response");
-      responseEl.textContent = "Thinking...";
 
-      const res = await fetch("/.netlify/functions/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ essay, question })
-      });
+<script>
+  const essay = `{{ content | striptags | replace('\n', ' ') | trim | escape | safe }}`;
 
-      const data = await res.json();
-      responseEl.textContent = data.answer || data.error || "No response.";
+  const form = document.getElementById("qa-form");
+  const questionInput = document.getElementById("question");
+  const responseEl = document.getElementById("response");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = questionInput.value.trim();
+    if (!question) return;
+    responseEl.textContent = "Thinking...";
+
+    const res = await fetch("/.netlify/functions/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ essay, question })
     });
-  </script>
+
+    const data = await res.json();
+    responseEl.textContent = data.answer || data.error || "No response.";
+    questionInput.value = "";
+  });
+</script>
+
 </body>
 </html>

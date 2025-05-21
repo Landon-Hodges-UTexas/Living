@@ -33,8 +33,6 @@
 
 <pre id="response" class="qa-response"></pre>
 
-{{ supplementFile | striptags | replace('\n', ' ') | trim | escape | safe }}
-
 <script>
   {% if supplementFile %}
     const supplement = `{% include supplementFile %}`;

@@ -4,7 +4,7 @@ title: Breaths
 ---
 
 <ul>
-{% for breath in collections.blog %}
+{% for breath in collections.Breath %}
   <li>
     <a href="{{ breath.url }}">{{ breath.data.title }}</a>
   </li>

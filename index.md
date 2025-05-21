@@ -3,14 +3,14 @@ layout: layout.njk
 title: Living and Breathing
 ---
 
-This is a collection of my living an breathing thoughts! I've compiled a list of breaths. Some of them are inhales, some of them are exhales, but all of them are alive. You can talk to them, change them, or hear about their upbringing. The only rule is you'll never find a static blog post. These are living breaths.
+This is a collection of my living and breathing thoughts! I've collected some of my breaths. Some of them are inhales, some of them are exhales, but all of them are alive. You can talk to them, change them, or hear about their upbringing. The only rule is you'll never find a static blog post.
 
-# Check some of them out:
+# Here they are:
 
 <ul>
-{% for post in collections.Breath %}
+{% for breath in collections.Breath %}
   <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    <a href="{{ breath.url }}">{{ breath.data.title }}</a>
   </li>
 {% endfor %}
 </ul>

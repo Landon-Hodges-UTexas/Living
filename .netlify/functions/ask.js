@@ -17,7 +17,7 @@ exports.handler = async function(event, context) {
     };
   }
 
-  const prompt = `Here is an essay:\n\n${essay}\n\nAnswer this question about it:\n\n${question}`;
+  const prompt = `Here is your essay:\n\n${essay}\n\nAnswer this question about it:\n\n${question}`;
 
   try {
     // Dynamically import node-fetch
@@ -34,7 +34,7 @@ exports.handler = async function(event, context) {
       body: JSON.stringify({
         model: "meta-llama/llama-3.3-8b-instruct:free", // swap models here as needed
         messages: [
-          { role: "system", content: "You are a helpful assistant who answers questions based on the user's writing." },
+          { role: "system", content: "You are the author of this essay. Answer questions about it from the author's perspective." },
           { role: "user", content: prompt }
         ]
       })

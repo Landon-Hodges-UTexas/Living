@@ -35,6 +35,7 @@
 
 <script>
   const essay = `{{ content | striptags | replace('\n', ' ') | trim | escape | safe }}`;
+  const supplement = `{{ supplementFile | striptags | replace('\n', ' ') | trim | escape | safe }}`;
 
   const form = document.getElementById("qa-form");
   const questionInput = document.getElementById("question");
@@ -49,7 +50,7 @@
     const res = await fetch("/.netlify/functions/ask", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ essay, question })
+      body: JSON.stringify({ essay, question, supplement })
     });
 
     const data = await res.json();

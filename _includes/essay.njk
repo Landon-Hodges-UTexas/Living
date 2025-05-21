@@ -40,7 +40,7 @@
       const responseEl = document.getElementById("response");
       responseEl.textContent = "Thinking...";
 
-      const res = await fetch("/.netlify/functions/ask", {
+      const res = await fetch("/netlify/functions/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ essay, question })

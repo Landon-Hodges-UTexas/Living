@@ -1,5 +1,4 @@
 require("dotenv").config();
-const fetch = require("node-fetch");
 
 exports.handler = async function(event, context) {
   if (event.httpMethod !== "POST") {
@@ -21,6 +20,9 @@ exports.handler = async function(event, context) {
   const prompt = `Here is an essay:\n\n${essay}\n\nAnswer this question about it:\n\n${question}`;
 
   try {
+    // Dynamically import node-fetch
+    const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+    
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -47,6 +49,7 @@ exports.handler = async function(event, context) {
       })
     };
   } catch (err) {
+    console.error("Error details:", err);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: err.message })

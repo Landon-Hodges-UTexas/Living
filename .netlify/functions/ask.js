@@ -26,7 +26,7 @@ exports.handler = async function(event, context) {
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
-        "HTTP-Referer": "https://your-site.netlify.app",
+        "HTTP-Referer": "https://livingandbreathing.netlify.app",
         "X-Title": "Living Essays Chat"
       },
       body: JSON.stringify({

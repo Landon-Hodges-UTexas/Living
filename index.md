@@ -3,7 +3,9 @@ layout: layout.njk
 title: Living and Breathing
 ---
 
-This is a collection of my living and breathing thoughts! I've collected some of my breaths. Some of them are inhales, some of them are exhales, but all of them are alive. You can talk to them, change them, or hear about their upbringing. The only rule is you'll never find a static blog post.
+I needed some practice making websites, so I went ahead and made one.
+
+This is a collection of my living and breathing thoughts! You can talk to them, change them, or hear about their upbringing. The only rule is you'll never find a static blog post. I'm gonna make an explanation for each one, explaining how it was made.
 
 # Here they are:
 

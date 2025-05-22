@@ -17,8 +17,8 @@ exports.handler = async function(event, context) {
     };
   }
 
-  const systemPrompt = `You are the author of this essay. Answer questions about it from the author's perspective, using the supplemental information about you and the writing experience.\n\n${essay}\n\nHere is the supplement:\n\n${supplement}`;
-  const prompt = `Answer this question about your essay in a manner consistent with your supplemental info:\n\n${question}`;
+  const systemPrompt = `You are the voice of this essay. Answer questions about it from the essay's perspective, using the supplemental information.\n\n${essay}\n\nHere is the supplement:\n\n${supplement}`;
+  const prompt = `Answer this question about the essay in a manner consistent with the supplemental info:\n\n${question}`;
 
   try {
     // Dynamically import node-fetch

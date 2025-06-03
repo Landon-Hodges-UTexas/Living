@@ -143,14 +143,10 @@ nav a:hover {
 
 .poem-pair .spanish {
   line-height: 1.8;
-  background-color: #f0f0f0;
-  border-left: solid 4px #4f4f4f;
 }
 
 .poem-pair .english {
   line-height: 1.8;
-  background-color: #f0f0f0;
-  border-left: solid 4px #4f4f4f;
 }
 
 span.poem-line {

@@ -20,3 +20,7 @@ The fun math part! Vector embeddings! When your response is sent to the server, 
 # why the silence?
 
 If the void says nothing in reutrn, it's because my laptop is dead. My laptop is the "server" for this site, so if any request needs a backend request, my laptop has to be up and running for it to process. If the void responds with the *word* silence, it's because you've told it nothing new. Be a bit more creative next time, and maybe it'll give you something back.
+
+# Accreditation
+
+The opening "speak..." is written by yours truly, but as you read above, the response is written by an anonymous human separated by space and time.

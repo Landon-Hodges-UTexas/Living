@@ -141,9 +141,16 @@ nav a:hover {
   margin: 2rem 0;
 }
 
-.poem-pair .spanish,
+.poem-pair .spanish {
+  line-height: 1.8;
+  background-color: #f0f0f0;
+  border-left: solid 4px #4f4f4f;
+}
+
 .poem-pair .english {
   line-height: 1.8;
+  background-color: #f0f0f0;
+  border-left: solid 4px #4f4f4f;
 }
 
 span.poem-line {
@@ -156,7 +163,7 @@ span.poem-line {
 }
 
 span.poem-line:hover {
-  background-color: #f0f0f0;
+  background-color: #f7f7f7;
 }
 
 span.poem-line.highlight {

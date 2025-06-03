@@ -25,25 +25,28 @@
   </div>
 </div>
 
-<div id="commentary-box" class="commentary-box"></div>
+
+<div id="commentary-box" class="commentary-box">
+Select a line in the spanish version above to see my commentary
+</div>
 
 <script>
-  const commentary = {
-    "1": "A really simple line, this one sets the tone of the translation to come: as literal as possible, while trying to preserve some of the rhyme, and approximate the tone. I didn't want to throw out Jimenez's image to just write my own approximation of his poem.",
-    "2": "The original doesn't have a verb 'racing'. I used it to rhyme with embracing, which does appear in the spanish, but it has the side effect of attributing some life to the countryside, which fits with the general image.",
-    "3": "Enveloping or embracing are both very valid translations, but i felt embracing was more warm in English. Also, it has more rhymes.",
-    "4": "A simplification of Jimenez's line in exchange for a short aliteration in English. A literal translation would be: 'sweetness of its clear, setting sun.'",
-    "5": "In this stanza, the language gets a little wacky, so I prioritized maintaining punctuation and local rhyme. This meant I had to sacrifice some accuracy and Jimenez's masterful global rhyme. 'Paralelamente' literaly translates to 'prallel-ly', so I illustrated what it meant more concretely.",
-    "6": "A pretty direct translation. The 'sencilla' is lost in my translation, but it means earnest or sincere, and it applies to the hand that drops the seed. The order of the words is a little tortured, even in the Spanish, so I felt a little justified with my approximation.",
-    "7": "This line was the result of lots of work, but in the end, it really got there. I think this is an honest translation that only shifts the action from the hand to the seed. Instead of the hand 'putting' the seed, the seed 'falls'. It still maintains active voice, and preserves meaning and rhyme.",
-    "8": "Here is one of my greatest regrets. 'entraña' translates to entrails, which is a much more viceral image for tilled soil than I could succinctly illustrate in English. honest, broken soil was the best I could do, but it does have the side effect of making a sort of till of commas through the stanza, one per line, 3 or 4 words in. Isn't that neat!",
-    "9": "These ending stanzas are where I'm particularly proud of the translation. 'arrancarme' could mean 'wrench out', but I think 'tearing out' is more in line with the viceral original tone.",
-    "10": "I really wanted to rhyme 'world', so this is more literally translated as 'full of high and deep emotion'. Though I think my translation builds a little more tension going into the ending.",
-    "11": "So yeah, I enjambed 'of / my homeland' to rhyme with 'love'. So sue me. It preserves the meaning of the last stanza completely, and it builds some momentum. Let me live!",
-    "12": "The meaning of this last stanza is pretty much exact, thanks to the slightly tortured nature of the one before. This line is largely untouched, though you could argue it should be 'and with sowing it', but in my judgement, that 'con' is an artifact of Spanish that doesn't affect the meaning enough to stress the English.",
-    "13": "Technically, there's no 'might' in the Spanish, but it's natural phrase in English: 'to see if it might...'.",
-    "14": "Exactly what it looks like. I love this poem, and this ending is so pastoral and trancendental, weaving together the poem's two chronologically distinct tones beautifully. I encourage you to seek out more translations of Juan Ramón Jimenez's work. They're stunning."
-  };
+        const commentary = {
+            "1": "This opening line establishes my translation philosophy: to remain as literal as possible while preserving both rhyme and tone. Rather than creating my own approximation of Jiménez's imagery, I wanted to honor his specific vision while making it accessible in English.",
+            "2": "The verb 'racing' doesn't appear in the original Spanish, but I introduced it to create a rhyme with 'embracing' in the next line. This choice has the fortunate side effect of animating the countryside, which aligns beautifully with the poem's overall imagery of living landscape.",
+            "3": "'Envolvía' could be translated as either 'enveloping' or 'embracing,' but I chose 'embracing' for its warmer connotations in English and its greater potential for rhyme. This word choice helps establish the tender relationship between season and land that runs throughout the poem.",
+            "4": "Here I simplified Jiménez's more elaborate phrasing ('dulzura de su claro sol poniente' - literally 'sweetness of its clear, setting sun') in favor of creating a brief alliteration with 'golden grace.' This maintains the luminous quality of the original while creating a more natural English rhythm.",
+            "5": "The second stanza presents more complex syntax, so I prioritized maintaining both punctuation and local rhyme schemes, though this meant sacrificing some of Jiménez's masterful global rhyme pattern. 'Paralelamente' translates literally as 'parallel-ly,' so I chose to convey a meaning more grounded in the poem's image with 'in even toil.'",
+            "6": "This line follows the original fairly directly, though I lost the nuance of 'sencilla' (earnest, sincere) which modifies the hand that drops the seed. The word order feels somewhat tortured even in Spanish, which gave me license to be creative with the English flow.",
+            "7": "This line required extensive revision but ultimately succeeds, I believe. I shifted the action from the hand actively 'putting' the seed to the seed itself 'falling,' which maintains active voice while preserving both meaning and rhyme.",
+            "8": "This represents one of my greatest translation challenges. 'Entraña' literally means 'entrails,' creating a much more visceral image for tilled soil than I could capture succinctly in English. 'Honest, broken soil' was my compromise, though it creates an interesting pattern of commas throughout the stanza—one per line, three or four words in. It looks to me like a tilled line through the stanza, which I'll admit was a complete accident (though a pretty one).",
+            "9": "The final stanzas showcase what I consider my most successful translation work. 'Arrancarme' could mean 'wrench out,' but 'tearing out' better captures the visceral intensity of Jiménez's original tone and the emotional violence of the speaker's imagined act.",
+            "10": "My desire to rhyme with 'world' led me to condense 'pleno de su sentir alto y profundo' (literally 'full of high and deep feeling') into 'full of emotion deeply furled.' While less literal, this phrasing builds some more tension leading into the poem's climax.",
+            "11": "I enjambed 'of / my homeland' to achieve the rhyme with 'love' in the final line. This preserves the complete meaning of the concluding stanza while building momentum toward the resolution. The break seems a bit amatuer in English, but it was a worthwhile compromise to preserve Jimenez's beautiful final line.",
+            "12": "Thanks to the strategic enjambment in the previous line, this line translates almost exactly. I omitted 'con' ('and with sowing it') because in my judgement, it represents a Spanish syntactic requirement that doesn't affect the core meaning in English.",
+            "13": "While the original contains no conditional 'might,' I added it because 'to see if it might...' represents more natural English phrasing than a direct translation would provide.",
+            "14": "This final line translates directly and beautifully captures what I love most about this poem: its simultaneously pastoral and transcendental tone. I encourage you to seek out more translations of Juan Ramón Jiménez's work—his poetry is truly stunning."
+        };
 
   document.querySelectorAll('.spanish span').forEach(span => {
     span.addEventListener('click', () => {

@@ -133,3 +133,43 @@ nav a:hover {
     padding: 0.6rem 1rem;
   }
 }
+
+.poem-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.poem-pair .spanish,
+.poem-pair .english {
+  line-height: 1.8;
+}
+
+.poem-pair span {
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.poem-pair span:hover {
+  background-color: #f0f0f0;
+}
+
+.poem-pair span.highlight {
+  background-color: #ffaddd; /* soft pink highlight */
+}
+
+/* Responsive styles for poem pairs */
+@media (max-width: 700px) {
+  .poem-pair {
+    display: block;
+  }
+
+  .poem-pair .spanish,
+  .poem-pair .english {
+    margin-bottom: 1rem;
+  }
+}

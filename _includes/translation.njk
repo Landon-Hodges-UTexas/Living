@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/breaths/">Breaths</a></li>
+      <li><a href="/explanations/">Explanations</a></li>
+      <li><a href="/void">Void</a></li>
+    </ul>
+  </nav>
+
+<div class="poem-pair">
+  <div class="spanish">
+    <span data-line="1">Estaba echado yo en la tierra, enfrente</span>
+    <span data-line="2">del infinito campo de Castilla,</span>
+    <span data-line="3">que el otoño envolvía en la amarilla</span>
+    <span data-line="4">dulzura de su claro sol poniente./span>
+
+    <span data-line="5">Lento, el arado, paralelamente</span>
+    <span data-line="6">abría el haza oscura, y la sencilla</span>
+    <span data-line="7">mano abierta dejaba la semilla</span>
+    <span data-line="8">en su entraña partida honradamente.</span>
+
+    <span data-line="9">Pensé arrancarme el corazón, y echarlo,</span>
+    <span data-line="10">pleno de su sentir alto y profundo,</span>
+    <span data-line="11">al ancho surco del terruño tierno,</span>
+
+    <span data-line="12">a ver si son partirlo y con sembrarlo,</span>
+    <span data-line="13">la primavera le mostraba al mundo</span>
+    <span data-line="14">el árbol puro del amor eterno.</span>
+  </div>
+  <div class="english">
+    <span data-line="1">I lay upon the Earth, in front</span>
+    <span data-line="2">of Castille's endlessly racing\nfields, </span>
+    <span data-line="3">that autumn was embracing\nin the golden </span>
+    <span data-line="4">grace of the setting sun./span>
+
+    <span data-line="5">Slowly, the plough, in even toil</span>
+    <span data-line="6">cut the dark field, while freed</span>
+    <span data-line="7">by an open hand, a seed\nfell </span>
+    <span data-line="8">into honest, broken soil.</span>
+
+    <span data-line="9">I thought of tearing out my heart, and throwing it,</span>
+    <span data-line="10">full of emotion deeply furled,</span>
+    <span data-line="11">to the tender and wide furrow of\n\nmy homeland, </span>
+
+    <span data-line="12">to see if by losing it and sowing it,</span>
+    <span data-line="13">Spring might reveal to the world</span>
+    <span data-line="14">the pure tree of eternal love.</span>
+  </div>
+</div>
+
+<div id="commentary-box" class="commentary-box"></div>
+
+<script>
+  const commentary = {
+    "1": "A really simple line, this one sets the tone of the translation to come: as literal as possible, while trying to preserve some of the rhyme, and approximate the tone. I didn't want to throw out Jimenez's image to just write my own approximation of his poem.",
+    "2": "The original doesn't have a verb 'racing'. I used it to rhyme with embracing, which does appear in the spanish, but it has the side effect of attributing some life to the countryside, which fits with the general image.",
+    "3": "Enveloping or embracing are both very valid translations, but i felt embracing was more warm in English. Also, it has more rhymes.",
+    "4": "A simplification of Jimenez's line in exchange for a short aliteration in English. A literal translation would be: 'sweetness of its clear, setting sun.'",
+    "5": "In this stanza, the language gets a little wacky, so I prioritized maintaining punctuation and local rhyme. This meant I had to sacrifice some accuracy and Jimenez's masterful global rhyme. 'Paralelamente' literaly translates to 'prallel-ly', so I illustrated what it meant more concretely.",
+    "6": "A pretty direct translation. The 'sencilla' is lost in my translation, but it means earnest or sincere, and it applies to the hand that drops the seed. The order of the words is a little tortured, even in the Spanish, so I felt a little justified with my approximation.",
+    "7": "This line was the result of lots of work, but in the end, it really got there. I think this is an honest translation that only shifts the action from the hand to the seed. Instead of the hand 'putting' the seed, the seed 'falls'. It still maintains active voice, and preserves meaning and rhyme.",
+    "8": "Here is one of my greatest regrets. 'entraña' translates to entrails, which is a much more viceral image for tilled soil than I could succinctly illustrate in English. honest, broken soil was the best I could do, but it does have the side effect of making a sort of till of commas through the stanza, one per line, 3 or 4 words in. Isn't that neat!",
+    "9": "These ending stanzas are where I'm particularly proud of the translation. 'arrancarme' could mean 'wrench out', but I think 'tearing out' is more in line with the viceral original tone.",
+    "10": "I really wanted to rhyme 'world', so this is more literally translated as 'full of high and deep emotion'. Though I think my translation builds a little more tension going into the ending.",
+    "11": "So yeah, I enjambed 'of / my homeland' to rhyme with 'love'. So sue me. It preserves the meaning of the last stanza completely, and it builds some momentum. Let me live!",
+    "12": "The meaning of this last stanza is pretty much exact, thanks to the slightly tortured nature of the one before. This line is largely untouched, though you could argue it should be 'and with sowing it', but in my judgement, that 'con' is an artifact of Spanish that doesn't affect the meaning enough to stress the English.",
+    "13": "Technically, there's no 'might' in the Spanish, but it's natural phrase in English: 'to see if it might...'.",
+    "14": "Exactly what it looks like. I love this poem, and this ending is so pastoral and trancendental, weaving together the poem's two chronologically distinct tones beautifully. I encourage you to seek out more translations of Juan Ramón Jimenez's work. They're stunning."
+  };
+
+  document.querySelectorAll('.spanish span').forEach(span => {
+    span.addEventListener('click', () => {
+      const line = span.dataset.line;
+      document.querySelectorAll('span').forEach(el => {
+        el.classList.remove('highlight');
+        if (el.dataset.line === line) el.classList.add('highlight');
+      });
+
+      // Show commentary
+      const box = document.getElementById('commentary-box');
+      box.textContent = commentary[line] || 'No commentary available for this line.';
+    });
+  });
+</script>
+
+</body>
+</html>

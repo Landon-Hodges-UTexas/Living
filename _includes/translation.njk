@@ -18,42 +18,42 @@
 
 <div class="poem-pair">
   <div class="spanish">
-    <span data-line="1">Estaba echado yo en la tierra, enfrente</span>
-    <span data-line="2">del infinito campo de Castilla,</span>
-    <span data-line="3">que el otoño envolvía en la amarilla</span>
-    <span data-line="4">dulzura de su claro sol poniente./span>
+    <div data-line="1">Estaba echado yo en la tierra, enfrente</div><br>
+    <div data-line="2">del infinito campo de Castilla,</div><br>
+    <div data-line="3">que el otoño envolvía en la amarilla</div><br>
+    <div data-line="4">dulzura de su claro sol poniente.</div><br><br>
 
-    <span data-line="5">Lento, el arado, paralelamente</span>
-    <span data-line="6">abría el haza oscura, y la sencilla</span>
-    <span data-line="7">mano abierta dejaba la semilla</span>
-    <span data-line="8">en su entraña partida honradamente.</span>
+    <div data-line="5">Lento, el arado, paralelamente</div><br>
+    <div data-line="6">abría el haza oscura, y la sencilla</div><br>
+    <div data-line="7">mano abierta dejaba la semilla</div><br>
+    <div data-line="8">en su entraña partida honradamente.</div><br><br>
 
-    <span data-line="9">Pensé arrancarme el corazón, y echarlo,</span>
-    <span data-line="10">pleno de su sentir alto y profundo,</span>
-    <span data-line="11">al ancho surco del terruño tierno,</span>
+    <div data-line="9">Pensé arrancarme el corazón, y echarlo,</div><br>
+    <div data-line="10">pleno de su sentir alto y profundo,</div><br>
+    <div data-line="11">al ancho surco del terruño tierno,</div><br><br>
 
-    <span data-line="12">a ver si son partirlo y con sembrarlo,</span>
-    <span data-line="13">la primavera le mostraba al mundo</span>
-    <span data-line="14">el árbol puro del amor eterno.</span>
+    <div data-line="12">a ver si son partirlo y con sembrarlo,</div><br>
+    <div data-line="13">la primavera le mostraba al mundo</div><br>
+    <div data-line="14">el árbol puro del amor eterno.</div>
   </div>
   <div class="english">
-    <span data-line="1">I lay upon the Earth, in front</span>
-    <span data-line="2">of Castille's endlessly racing\nfields, </span>
-    <span data-line="3">that autumn was embracing\nin the golden </span>
-    <span data-line="4">grace of the setting sun./span>
+    <div data-line="1">I lay upon the Earth, in front</div><br>
+    <div data-line="2">of Castille's endlessly racing<br>fields, </div>
+    <div data-line="3">that autumn was embracing<br>in the golden </div>
+    <div data-line="4">grace of the setting sun./div><br><br>
 
-    <span data-line="5">Slowly, the plough, in even toil</span>
-    <span data-line="6">cut the dark field, while freed</span>
-    <span data-line="7">by an open hand, a seed\nfell </span>
-    <span data-line="8">into honest, broken soil.</span>
+    <div data-line="5">Slowly, the plough, in even toil</div><br>
+    <div data-line="6">cut the dark field, while freed</div><br>
+    <div data-line="7">by an open hand, a seed<br>fell </div>
+    <div data-line="8">into honest, broken soil.</div><br><br>
 
-    <span data-line="9">I thought of tearing out my heart, and throwing it,</span>
-    <span data-line="10">full of emotion deeply furled,</span>
-    <span data-line="11">to the tender and wide furrow of\n\nmy homeland, </span>
+    <div data-line="9">I thought of tearing out my heart, and throwing it,</div>
+    <div data-line="10">full of emotion deeply furled,</div>
+    <div data-line="11">to the tender and wide furrow of<br><br>my homeland, </div>
 
-    <span data-line="12">to see if by losing it and sowing it,</span>
-    <span data-line="13">Spring might reveal to the world</span>
-    <span data-line="14">the pure tree of eternal love.</span>
+    <div data-line="12">to see if by losing it and sowing it,</div><br>
+    <div data-line="13">Spring might reveal to the world</div><br>
+    <div data-line="14">the pure tree of eternal love.</div>
   </div>
 </div>
 
@@ -77,10 +77,10 @@
     "14": "Exactly what it looks like. I love this poem, and this ending is so pastoral and trancendental, weaving together the poem's two chronologically distinct tones beautifully. I encourage you to seek out more translations of Juan Ramón Jimenez's work. They're stunning."
   };
 
-  document.querySelectorAll('.spanish span').forEach(span => {
-    span.addEventListener('click', () => {
-      const line = span.dataset.line;
-      document.querySelectorAll('span').forEach(el => {
+  document.querySelectorAll('.spanish div').forEach(div => {
+    div.addEventListener('click', () => {
+      const line = div.dataset.line;
+      document.querySelectorAll('div').forEach(el => {
         el.classList.remove('highlight');
         if (el.dataset.line === line) el.classList.add('highlight');
       });

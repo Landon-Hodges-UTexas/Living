@@ -146,20 +146,23 @@ nav a:hover {
   line-height: 1.8;
 }
 
-.poem-pair span {
-  display: block;
+.poem-line {
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
 }
 
-.poem-pair span:hover {
+.poem-line:hover {
   background-color: #f0f0f0;
 }
 
-.poem-pair span.highlight {
-  background-color: #ffaddd; /* soft pink highlight */
+.poem-line.highlight {
+  background-color: #ffb1de;
+}
+
+.poem-line.highlight:hover {
+  background-color: #ffa3d9;
 }
 
 /* Responsive styles for poem pairs */

@@ -146,22 +146,23 @@ nav a:hover {
   line-height: 1.8;
 }
 
-.poem-line {
+span.poem-line {
+  display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
 }
 
-.poem-line:hover {
+span.poem-line:hover {
   background-color: #f0f0f0;
 }
 
-.poem-line.highlight {
+span.poem-line.highlight {
   background-color: #ffb1de;
 }
 
-.poem-line.highlight:hover {
+span.poem-line.highlight:hover {
   background-color: #ffa3d9;
 }
 
